@@ -1,10 +1,12 @@
 package br.com.pedrodcp.nizybot;
 
 import br.com.pedrodcp.nizybot.console.Colors;
+import br.com.pedrodcp.nizybot.events.InteractEvent;
 import br.com.pedrodcp.nizybot.managers.CommandManager;
 import br.com.pedrodcp.nizybot.events.onBotShutdown;
 import br.com.pedrodcp.nizybot.managers.SelectionMenuManager;
 import br.com.pedrodcp.nizybot.methods.Errors;
+import br.com.pedrodcp.nizybot.registers.CommandsRegister;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
@@ -41,8 +43,10 @@ public class NizyBot {
             builder.addEventListeners(new onBotShutdown());
             builder.addEventListeners(new CommandManager());
             builder.addEventListeners(new SelectionMenuManager());
+            builder.addEventListeners(new InteractEvent());
             builder.setActivity(Activity.watching("@NizyBot - n!ajuda"));
             jda = builder.build().awaitReady();
+            CommandsRegister.loadCommands();
             System.out.println("");
             System.out.println(Colors.GREEN + "[NizyBot] Instâncias iniciadas com sucesso!");
             System.out.println("");

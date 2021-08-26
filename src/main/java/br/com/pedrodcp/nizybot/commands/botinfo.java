@@ -3,7 +3,6 @@ package br.com.pedrodcp.nizybot.commands;
 import br.com.pedrodcp.nizybot.managers.TimeManager;
 import br.com.pedrodcp.nizybot.store.Emojis;
 import net.dv8tion.jda.api.EmbedBuilder;
-import net.dv8tion.jda.api.interactions.components.selections.SelectionMenu;
 
 import static br.com.pedrodcp.nizybot.NizyBot.*;
 import static br.com.pedrodcp.nizybot.managers.CommandManager.*;
@@ -29,7 +28,7 @@ public class botinfo {
         embedBuilder.addField(Emojis.JAVA + " Linguagem", "```Java```", true);
         embedBuilder.addField(Emojis.BOOK + " Shards", "```[ " + jda.getShardInfo().getShardTotal() + " ]```", true);
         embedBuilder.addField(Emojis.INFO + " Comandos Executados - (Última Atualização)", "```" + commands + "```", false);
-        event.getMessage().replyEmbeds(embedBuilder.build()).mentionRepliedUser(true).setActionRow(SelectionMenu.create("1").addOption("Me adicione!", "TesteOption1").addOption("Vote em mim!", "TesteOption2").build()).queue();
+        event.replyEmbeds(embedBuilder.build()).setEphemeral(false).mentionRepliedUser(true).queue();
     }
 
 }

@@ -1,12 +1,16 @@
 package br.com.pedrodcp.nizybot.store;
 
+import net.dv8tion.jda.api.entities.Emote;
+
+import static br.com.pedrodcp.nizybot.NizyBot.*;
+
 public class Emojis {
 
     public static String OK = "<:ok:780868639204442153>";
     public static String NO = "<:negado:780868460270845952>";
     public static String LOADING = "<:carregando:770764549938217021>";
     public static String EARLY_SUPPORT = "<:add:801217044590362718>";
-    public static String BOOK = "<:agenda:785228605310894100>";
+    public static Emote BOOK = jda.getEmoteById("785228605310894100"); //"<:agenda:785228605310894100>";
     public static String ALERT = "<:alerta:792897632632569906>";
     public static String SUPPORTER = "<:apoiador:775738770427346974>";
     public static String ENABLED = "<:ativado:780450231543136296>";
