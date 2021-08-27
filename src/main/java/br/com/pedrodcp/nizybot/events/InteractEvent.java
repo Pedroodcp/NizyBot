@@ -1,14 +1,9 @@
 package br.com.pedrodcp.nizybot.events;
 
-import net.dv8tion.jda.api.events.interaction.ButtonClickEvent;
 import net.dv8tion.jda.api.events.interaction.SelectionMenuEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 public class InteractEvent extends ListenerAdapter {
-
-    public void onButtonClick(ButtonClickEvent e) {
-        e.getMessage().reply(e.getButton().getId()).mentionRepliedUser(true).queue();
-    }
 
     public void onSelectionMenu(SelectionMenuEvent e) {
         String keyValues = null;
@@ -23,7 +18,7 @@ public class InteractEvent extends ListenerAdapter {
                 }
             }
         }
-        e.reply("Você selecionou o botão de ajuda: `" + keyValues + "`").mentionRepliedUser(false).queue();
+        e.reply(e.getMember().getAsMention() + ", você selecionou o botão de ajuda: `" + keyValues + "`").mentionRepliedUser(false).queue();
     }
 
 }

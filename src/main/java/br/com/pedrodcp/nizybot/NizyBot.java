@@ -21,7 +21,6 @@ public class NizyBot {
 
     public static JDA jda;
 
-    public static String prefix = "n!";
     public static String ownerID = "681373339067220041";
 
     public static long time;
@@ -44,12 +43,11 @@ public class NizyBot {
             builder.addEventListeners(new CommandManager());
             builder.addEventListeners(new SelectionMenuManager());
             builder.addEventListeners(new InteractEvent());
-            builder.setActivity(Activity.watching("@NizyBot - n!ajuda"));
+            builder.setActivity(Activity.watching("@NizyBot - /ajuda"));
             jda = builder.build().awaitReady();
             CommandsRegister.loadCommands();
             System.out.println("");
             System.out.println(Colors.GREEN + "[NizyBot] Instâncias iniciadas com sucesso!");
-            System.out.println("");
             time = System.currentTimeMillis();
         } catch (LoginException | InterruptedException e) {
             Errors.checkError();
@@ -58,10 +56,6 @@ public class NizyBot {
 
     public static JDA getJda() {
         return jda;
-    }
-
-    public static String getPrefix() {
-        return prefix;
     }
 
     public static String getOwnerID() {

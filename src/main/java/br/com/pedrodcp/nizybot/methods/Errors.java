@@ -9,11 +9,11 @@ public class Errors {
     public static void checkError() {
         if (jda == null) {
             System.out.println("");
-            System.out.println(Colors.RED + "[NizyBotError] Não foi possível iniciar o bot - (Token Error)");
+            System.out.println(Colors.RED + "[NizyBot - Logs] Não foi possível iniciar o bot - (Token Error)");
             System.out.println("");
         } else {
             System.out.println("");
-            System.out.println(Colors.RED + "[NizyBotError] Não foi possível iniciar o bot - (Unknown Error)");
+            System.out.println(Colors.RED + "[NizyBot - Logs] Não foi possível iniciar o bot - (Unknown Error)");
             System.out.println("");
         }
     }
