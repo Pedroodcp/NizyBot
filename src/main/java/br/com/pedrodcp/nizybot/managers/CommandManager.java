@@ -42,6 +42,21 @@ public class CommandManager extends ListenerAdapter {
                 embedBuilder.setDescription(Emojis.NO + " Não foi possível executar o comando 'botinfo'.");
                 e.replyEmbeds(embedBuilder.build()).setEphemeral(false).mentionRepliedUser(true).queue();
             }
+        } else {
+            if (e.getName().equals("userinfo")) {
+                try {
+                    if (commands == 0) {
+                        commands = 1;
+                    } else {
+                        commands = commands + 1;
+                    }
+                    br.com.pedrodcp.nizybot.commands.userinfo.userInfoCommand();
+                } catch (Exception exception) {
+                    EmbedBuilder embedBuilder = new EmbedBuilder();
+                    embedBuilder.setDescription(Emojis.NO + " Não foi possível executar o comando 'userinfo'.");
+                    e.replyEmbeds(embedBuilder.build()).setEphemeral(false).mentionRepliedUser(true).queue();
+                }
+            }
         }
     }
 

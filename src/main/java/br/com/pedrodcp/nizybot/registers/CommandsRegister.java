@@ -8,6 +8,7 @@ public class CommandsRegister {
 
     public static void loadCommands() {
         jda.upsertCommand("botinfo", "Comando de informações do bot.").queue();
+        jda.upsertCommand("userinfo", "Comando para informações de um usuário.").queue();
         System.out.println("");
         System.out.println(Colors.BLUE + "[NizyBot - Logs] Comandos carregados com sucesso.");
     }
