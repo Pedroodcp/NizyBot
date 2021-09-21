@@ -5,7 +5,7 @@ import br.com.pedrodcp.nizybot.events.InteractEvent;
 import br.com.pedrodcp.nizybot.managers.CommandManager;
 import br.com.pedrodcp.nizybot.events.onBotShutdown;
 import br.com.pedrodcp.nizybot.managers.SelectionMenuManager;
-import br.com.pedrodcp.nizybot.methods.Errors;
+import br.com.pedrodcp.nizybot.logs.Errors;
 import br.com.pedrodcp.nizybot.registers.CommandsRegister;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;

@@ -1,4 +1,4 @@
-package br.com.pedrodcp.nizybot.methods;
+package br.com.pedrodcp.nizybot.logs;
 
 import br.com.pedrodcp.nizybot.console.Colors;
 
