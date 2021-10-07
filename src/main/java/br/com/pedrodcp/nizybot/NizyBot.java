@@ -6,7 +6,10 @@ import br.com.pedrodcp.nizybot.managers.CommandManager;
 import br.com.pedrodcp.nizybot.events.onBotShutdown;
 import br.com.pedrodcp.nizybot.managers.SelectionMenuManager;
 import br.com.pedrodcp.nizybot.logs.Errors;
+import br.com.pedrodcp.nizybot.models.database.ConnectionModel;
+import br.com.pedrodcp.nizybot.models.database.MySQLConnection;
 import br.com.pedrodcp.nizybot.registers.CommandsRegister;
+import br.com.pedrodcp.nizybot.statements.Statements;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
@@ -20,15 +23,17 @@ import javax.security.auth.login.LoginException;
 public class NizyBot {
 
     public static JDA jda;
+    public static ConnectionModel connectionModel;
 
-    public static String ownerID = "681373339067220041";
+    public static String ownerID = "userID";
 
     public static long time;
-
     public static int commands;
 
     public static void main(String[] args) {
-        String token = "ODMxNzM4NjExMjcwOTQyNzIw.YHZm8Q.-jvCWyvXm7Ic9C0aJAEhdRsaIGo";
+        String token = "TOKEN";
+        connectionModel = new MySQLConnection("localhost", 3306, "database", "root", "password");
+        Statements.initialize();
 
         JDABuilder builder = JDABuilder.createDefault(token)
                 .setAutoReconnect(true)
